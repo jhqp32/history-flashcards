@@ -1,2 +1,333 @@
-# history-flashcards
-history flashcards
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d0e14">
+<title>ЕГЭ по истории: карточки 862–1132 и раздробленность</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0e14;--card:#171923;--back:#5b5bf0;--backt:#fff;--text:#eef0f8;--mute:#8b90a7;--acc:#ff5d8f;--line:#262a3a;--ok:#2ecc8f;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}
+main{max-width:640px;margin:0 auto;padding:20px 16px 32px}
+h1{font-family:"Space Grotesk",Inter,system-ui,sans-serif;font-size:1.7rem;font-weight:700;letter-spacing:-.02em;margin:0 0 4px}.sub{color:var(--mute);font-family:system-ui,sans-serif;font-size:.85rem;margin:0 0 16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;font-family:system-ui,sans-serif}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--text);padding:7px 13px;border-radius:99px;font-size:.85rem;cursor:pointer}
+.chip.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.bar{height:5px;background:var(--line);border-radius:9px;overflow:hidden;margin-bottom:6px}
+.bar i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.stat{display:flex;justify-content:space-between;color:var(--mute);font:.8rem system-ui,sans-serif;margin-bottom:12px}
+.scene{perspective:1100px;height:340px;height:clamp(250px,44dvh,360px);cursor:pointer;touch-action:pan-y}
+.card{position:relative;width:100%;height:100%;transition:transform .75s cubic-bezier(.34,1.35,.5,1);transform-style:preserve-3d}
+.card.flip{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:auto;border:1px solid var(--line)}
+.front{background:linear-gradient(160deg,#1e2133,var(--card));font-size:1.25rem;font-weight:500;line-height:1.45}
+.backf{background:linear-gradient(135deg,#5b5bf0,#9b5cf6);color:var(--backt);transform:rotateY(180deg);font-size:1.1rem;line-height:1.5;border-color:transparent}
+.tag{font:.7rem system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--acc);margin-bottom:12px}
+.backf .tag{color:#ffd9cc}
+.hint{font:.75rem system-ui,sans-serif;color:var(--mute);margin-top:14px}.backf .hint{color:#cfdcec}
+.ctl{display:flex;gap:8px;margin-top:14px;font-family:system-ui,sans-serif}
+.ctl button{flex:1;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:.95rem;cursor:pointer}
+.ctl .know{background:var(--ok);border-color:var(--ok);color:#fff}
+.ctl .again{border-color:var(--acc);color:var(--acc)}
+.tools{display:flex;justify-content:space-between;margin-top:10px;font-family:system-ui,sans-serif}
+.tools button{background:none;border:0;color:var(--mute);font-size:.85rem;cursor:pointer;padding:6px}
+.done{text-align:center;padding:50px 10px;font-family:system-ui,sans-serif}
+.note{margin-top:22px;color:var(--mute);font:.75rem/1.5 system-ui,sans-serif}
+#fx{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.fl{position:absolute;left:0;top:0;opacity:.1;will-change:transform}
+.fl.h{color:#ff5d8f;line-height:1}
+@keyframes up{0%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(30px,-60vh) rotate(180deg)}100%{transform:translate(-20px,-125vh) rotate(360deg)}}
+main{position:relative;z-index:1}
+.big{font-family:"Space Grotesk",Inter,sans-serif;font-size:2.4rem;font-weight:700;letter-spacing:-.02em;line-height:1.2}
+button{font-family:inherit}
+.chips,.ctl,.tools,.opts,.stat,.sub,.tag,.hint,.note,.done{font-family:inherit}
+.face{border-radius:22px;box-shadow:0 14px 36px rgba(0,0,0,.45)}
+.chip,.opt,.ctl button{border-radius:14px}
+.chip.on{box-shadow:0 0 14px rgba(255,93,143,.45)}
+.qbox{border-radius:22px;font-weight:500}
+.aurora{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.aurora i{position:absolute;width:60vmax;height:60vmax;border-radius:50%;filter:blur(90px);animation:drift 28s ease-in-out infinite alternate}
+.aurora i:nth-child(1){left:-15vmax;top:-22vmax;background:#5b5bf0;opacity:.3}
+.aurora i:nth-child(2){right:-22vmax;top:25vh;background:#ff5d8f;opacity:.13;animation-duration:34s}
+.aurora i:nth-child(3){left:8vw;bottom:-32vmax;background:#22d3ee;opacity:.11;animation-duration:40s}
+.aurora::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:26px 26px}
+.tag{display:inline-block;padding:4px 11px;border-radius:99px;background:rgba(255,93,143,.14);font-weight:600}
+.backf .tag{background:rgba(255,255,255,.2);color:#fff}
+.front{border:1px solid rgba(255,255,255,.09);box-shadow:0 14px 36px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.07)}
+.front::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.07) 50%,transparent 60%);background-size:250% 100%;animation:shine 6s linear infinite}
+.scene:hover .card:not(.flip){transform:translateY(-5px) rotateX(2deg)}
+.bar i{background:linear-gradient(90deg,#5b5bf0,var(--ok))}
+.hint{animation:blink 2.4s ease-in-out infinite}
+.opt{transition:transform .12s,background .2s}
+.opt:not(:disabled):hover{border-color:var(--acc)}
+.opt:not(:disabled):active,.ctl button:active,.chip:active{transform:scale(.97)}
+.opt.good{animation:pop .4s}
+.opt.bad{animation:shake .35s}
+html,body{overflow-x:hidden}
+@keyframes enter{from{opacity:0;transform:translateX(180px) rotate(5deg) scale(.95)}to{opacity:1;transform:none}}
+@keyframes drift{to{transform:translate(8vmax,6vmax) scale(1.15)}}
+@keyframes shine{from{background-position:150% 0}to{background-position:-50% 0}}
+@keyframes blink{50%{opacity:.45}}
+@keyframes pop{0%{transform:scale(.97)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@media (prefers-reduced-motion:reduce){.aurora i,.scene,.hint,.front::after,.opt.good,.opt.bad{animation:none}.card{transition:none}}
+*{-webkit-tap-highlight-color:transparent}
+button,.scene{touch-action:manipulation}
+.ctl{position:sticky;bottom:calc(8px + env(safe-area-inset-bottom,0px));z-index:5}
+.ctl button{min-height:52px;font-weight:600}
+.opt{min-height:48px}
+.tools button,.chip{min-height:44px}
+.reset{display:block;margin:14px auto 0;background:none;border:0;color:var(--mute);font:.75rem Inter,system-ui,sans-serif;padding:10px;cursor:pointer;text-decoration:underline}
+@media (max-width:480px){
+main{padding:14px 12px 24px}
+h1{font-size:1.35rem}
+.chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-12px;padding-right:12px;padding-bottom:2px}
+.chips::-webkit-scrollbar{display:none}
+.chip{white-space:nowrap;flex:0 0 auto}
+.front{font-size:clamp(1.05rem,4.8vw,1.25rem)}
+.backf{font-size:1rem}
+.big{font-size:clamp(1.8rem,9.5vw,2.4rem)}
+.face{padding:18px}
+.aurora i{filter:blur(60px)}
+.note{font-size:.7rem}
+}
+.qbox{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;font-size:1.15rem;line-height:1.45;margin-bottom:12px;text-align:center}
+.qbox .tag{display:block;width:fit-content;margin:0 auto 12px}
+.opts{display:flex;flex-direction:column;gap:8px;font-family:system-ui,sans-serif}
+.opt{text-align:left;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:.95rem;line-height:1.4;cursor:pointer}
+.opt:disabled{cursor:default;color:var(--text);opacity:.75}
+.opt.good{background:var(--ok);border-color:var(--ok);color:#fff;opacity:1}
+.opt.bad{background:var(--acc);border-color:var(--acc);color:#fff;opacity:1}
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<div id="fx" aria-hidden="true"></div>
+<main>
+<h1>ЕГЭ по истории: 862–1132 и раздробленность</h1>
+<p class="sub">Нажмите на карточку, чтобы перевернуть. Свайп вправо — «Знаю», влево — «Повторить». Прогресс сохраняется.</p>
+<div class="chips" id="modes"></div>
+<div class="chips" id="chips"></div>
+<div class="bar"><i id="bar"></i></div>
+<div class="stat"><span id="pos"></span><span id="score"></span></div>
+<div id="stage"></div>
+<p class="note">Карточки составлены по основным датам к ЕГЭ (в т. ч. материалам Русского исторического общества) и сформулированы своими словами. Задания с РЕШУ ЕГЭ здесь не копируются: сверяйтесь с ними на самом сайте.</p>
+<button class="reset" id="reset" onclick="resetAll()">Сбросить прогресс</button>
+</main>
+<script>
+var D=[
+["Даты","862 год","Призвание варягов: Рюрик с братьями приглашён княжить (Ладога, затем Новгород). Начало династии Рюриковичей."],
+["Даты","882 год","Князь Олег захватывает Киев, объединяет Новгородскую и Киевскую земли. Образование Древнерусского государства со столицей в Киеве."],
+["Даты","907 год","Поход Олега на Царьград (по летописи)."],
+["Даты","911 год","Договор Олега с Византией."],
+["Даты","941 и 944 гг.","Походы князя Игоря на Византию, после которых заключён новый договор на менее выгодных для Руси условиях."],
+["Даты","945 год","Восстание древлян из-за сбора дани, гибель князя Игоря."],
+["Даты","945–946 гг.","Реформа княгини Ольги: установлены «уроки» (размер дани) и «погосты» (места сбора)."],
+["Даты","965 год","Разгром Хазарского каганата князем Святославом."],
+["Даты","967–971 гг.","Балканские походы Святослава, война с Византией."],
+["Даты","972 год","Гибель Святослава в бою с печенегами у днепровских порогов."],
+["Даты","988 год","Крещение Руси при князе Владимире Святославиче. Христианство из Византии стало государственной религией."],
+["Даты","1016 год","Составление «Русской Правды» Ярослава Мудрого (Древнейшая Правда), первого свода законов. Дата традиционная, в источниках точно не указана."],
+["Даты","1036 год","Решающая победа Ярослава над печенегами под Киевом."],
+["Даты","1037 год","Закладка Софийского собора в Киеве при Ярославе Мудром."],
+["Даты","20 февраля 1054 года","Смерть Ярослава Мудрого. По завещанию Русь поделена между сыновьями, закреплён лествичный порядок наследования."],
+["Даты","1068 год","Поражение Ярославичей от половцев на Альте и восстание в Киеве."],
+["Даты","1097 год","Любечский съезд князей: «каждый да держит отчину свою». Закреплено отчинное владение, но усобицы не прекратились."],
+["Даты","1111 год","Поход русских князей на половцев при Владимире Мономахе."],
+["Даты","1113 год","Восстание в Киеве; киевляне зовут Владимира Мономаха. Появление Устава Мономаха."],
+["Даты","1113–1125 гг.","Великое княжение Владимира Мономаха."],
+["Даты","1125–1132 гг.","Великое княжение Мстислава Великого, сына Мономаха."],
+["Даты","15 апреля 1132 года","Смерть Мстислава Великого. Распад Руси на самостоятельные земли: условная дата начала раздробленности."],
+["Личности","Какой князь в 882 г. захватил Киев и объединил северные и южные земли?","Князь Олег (Вещий)."],
+["Личности","Какой князь крестил Русь?","Владимир Святославич (Красное Солнышко), 988 г."],
+["Личности","Кто автор «Поучения детям», княживший в Киеве с 1113 г.?","Владимир Мономах. «Поучение» — памятник литературы XII в."],
+["Личности","Кто из князей получил прозвище Мудрый и издал «Русскую Правду»?","Ярослав Мудрый (1019–1054)."],
+["Личности","Кто последним правил единой Русью до начала раздробленности?","Мстислав Великий (1125–1132)."],
+["Раздробленность","Назовите причины политической раздробленности.","Рост боярского землевладения и сильных местных династий; развитие городов и хозяйства земель; ослабление связей с Киевом; усобицы по лествичному праву; половецкая угроза на юге уводила силы в другие земли."],
+["Раздробленность","Что такое лествичное право?","Порядок наследования, при котором власть переходила от старшего брата к младшему, а затем к сыновьям старшего. Часто вызывал усобицы."],
+["Раздробленность","Какие три самых сильных центра сложились в XII–XIII вв.?","Владимиро-Суздальское княжество, Галицко-Волынское княжество и Новгородская земля (республика)."],
+["Раздробленность","Положительные последствия раздробленности.","Подъём местных хозяйств и городов, рост культуры (летописание, каменное строительство), освоение новых земель."],
+["Раздробленность","Отрицательные последствия раздробленности.","Княжеские усобицы, слабая оборона от внешних врагов, ослабление Руси перед монгольским нашествием."],
+["Раздробленность","1136 год в Новгороде","Изгнание князя Всеволода Мстиславича, начало Новгородской феодальной республики."],
+["Раздробленность","Кто управлял Новгородом в республике?","Высший орган — вече; посадник — глава администрации; тысяцкий — командовал ополчением и ведал судом; архиепископ — глава церкви. Князя приглашали по договору как военного предводителя."],
+["Раздробленность","4 апреля 1147 года","Первое упоминание Москвы в летописи (при Юрии Долгоруком)."],
+["Раздробленность","Андрей Боголюбский","Князь Владимиро-Суздальской земли. Перенёс столицу во Владимир, в 1169 г. взял Киев, стремился к единовластию. Убит боярами в 1174 г."],
+["Раздробленность","Всеволод Большое Гнездо","Князь Владимиро-Суздальской земли (1176–1212), при нём княжество достигло наибольшего могущества."],
+["Раздробленность","Галицко-Волынское княжество: кто объединил земли?","Роман Мстиславич объединил Галич и Волынь в 1199 г. Затем Даниил Галицкий (1238–1264) укрепил княжество; в 1253 г. принял королевский титул."],
+["Раздробленность","23 апреля 1185 года","Выступление новгород-северского князя Игоря Святославича в неудачный поход на половцев — основа «Слова о полку Игореве»."],
+["Раздробленность","31 мая 1223 года","Битва на реке Калке: русские и половецкие войска разбиты монголами."],
+["Даты","879 год","Смерть Рюрика. Власть в Новгороде переходит к Олегу, опекуну малолетнего Игоря."],
+["Даты","912 год","Смерть Олега, начало княжения Игоря Рюриковича в Киеве."],
+["Даты","980 год","Начало княжения Владимира Святославича в Киеве, создание языческого пантеона."],
+["Даты","996 год","Освящение Десятинной церкви в Киеве, первой каменной церкви Руси."],
+["Даты","15 июля 1015 года","Смерть князя Владимира Святославича, начало междоусобицы его сыновей."],
+["Даты","1019 год","Победа Ярослава над Святополком на реке Альте, окончательное утверждение Ярослава на киевском престоле."],
+["Даты","1043 год","Поход Ярослава Мудрого на Византию, закончившийся неудачей."],
+["Даты","1051 год","Избрание Илариона, русского по происхождению, митрополитом Киевским."],
+["Даты","1072 год","Правда Ярославичей: отмена кровной мести, замена её вирой."],
+["Даты","26 мая 1093 года","Битва при Стугне: поражение русских дружин от половцев."],
+["Даты","1097 год","Ослепление теребовльского князя Василька после Любечского съезда."],
+["Даты","1103 год","Долобский съезд князей и поход на половцев."],
+["Даты","15 мая 1157 года","Смерть князя Юрия Долгорукого; к власти во Владимиро-Суздальской земле приходит Андрей Боголюбский."],
+["Даты","8 марта 1169 года","Взятие и разорение Киева войском коалиции князей во главе с Андреем Боголюбским."],
+["Даты","29 июня 1174 года","Убийство Андрея Боголюбского боярами-заговорщиками."],
+["Даты","1199 год","Объединение Галицкого и Волынского княжеств князем Романом Мстиславичем."],
+["Личности","Кто такие варяги?","Выходцы из Скандинавии, нанимавшиеся на службу к князьям и торговавшие на Руси."],
+["Личности","В чём суть норманнской теории?","Государство на Руси создали варяги во главе с Рюриком. Сторонники: Байер, Миллер, Шлёцер. Противник: Ломоносов (антинорманнская теория)."],
+["Личности","Что такое дружина?","Вооружённое окружение князя. Старшая дружина — бояре, младшая — гриди, отроки."],
+["Личности","Что такое полюдье?","Объезд князем и дружиной подвластных земель для сбора дани, обычно зимой."],
+["Личности","Кто такие смерды?","Свободные крестьяне-общинники."],
+["Личности","Кто такие закупы?","Люди, взявшие у владельца купу (ссуду) и работавшие, пока не отработают долг."],
+["Личности","Кто такие рядовичи?","Люди, заключившие с владельцем «ряд» (договор) о работе на него."],
+["Личности","Кто такие холопы?","Несвободные люди, в положении рабов."],
+["Личности","Что такое вотчина?","Наследственное земельное владение, которое можно продавать, дарить и передавать по наследству."],
+["Личности","Что такое вира?","Денежный штраф за убийство свободного человека по Русской Правде."],
+["Личности","Что такое «Русская Правда»?","Свод законов Древней Руси. Состоит из Древнейшей Правды, Правды Ярославичей и Пространной Правды (при Мономахе)."],
+["Личности","Что изменил Устав Владимира Мономаха?","Ограничил размер процентов по долгам и облегчил положение закупов."],
+["Личности","Кто такие Борис и Глеб?","Сыновья Владимира, убитые, по летописи, по приказу Святополка. Первые русские святые, канонизированные церковью."],
+["Личности","Кто такой Святополк Окаянный?","Князь, которого летопись обвиняет в убийстве братьев Бориса и Глеба; проиграл борьбу за Киев Ярославу."],
+["Личности","Кто такой Иларион?","Первый митрополит Киевский из русских, автор «Слова о законе и благодати»."],
+["Личности","Что такое «Повесть временных лет»?","Летопись начала XII в., связанная с именем монаха Киево-Печерского монастыря Нестора."],
+["Личности","Кто такие половцы?","Кочевники, появившиеся в причерноморских степях в XI в., постоянная угроза южным землям Руси."],
+["Личности","Что такое «путь из варяг в греки»?","Торговый путь с Балтики по Неве, Волхову и Днепру в Чёрное море и Византию."],
+["Личности","Какой князь прозван Долгоруким?","Юрий, сын Мономаха, правитель Ростово-Суздальской земли, боровшийся за Киев."],
+["Раздробленность","Что такое вече?","Народное собрание свободных жителей города. Особенно сильным было в Новгороде."],
+["Раздробленность","Чем отличалась Владимиро-Суздальская земля?","Сильной княжеской властью и слабым боярством, притоком населения. Памятники: Успенский собор во Владимире, церковь Покрова на Нерли."],
+["Раздробленность","Что такое «Слово о полку Игореве»?","Памятник литературы конца XII в. о неудачном походе Игоря Святославича на половцев и призыв к единству князей."],
+["Раздробленность","Почему Киев потерял прежнее значение?","Из-за половецкой угрозы, упадка пути «из варяг в греки», усиления других земель и разорения города в 1169 г."],
+["Раздробленность","Чем опасна для Руси была раздробленность перед 1237 г.?","Князья не могли объединить силы и по одному оказались перед монгольским войском."],
+["Даты","862–879 гг.","Княжение Рюрика."],
+["Даты","879–912 гг.","Княжение Олега (Вещего)."],
+["Даты","912–945 гг.","Княжение Игоря Рюриковича."],
+["Даты","964–972 гг.","Княжение Святослава Игоревича."],
+["Даты","980–1015 гг.","Княжение Владимира Святославича."],
+["Даты","1019–1054 гг.","Княжение Ярослава Мудрого в Киеве."],
+["Даты","1078–1093 гг.","Княжение Всеволода Ярославича в Киеве."],
+["Даты","1093–1113 гг.","Княжение Святополка Изяславича в Киеве."],
+["Даты","1158–1160 гг.","Строительство Успенского собора во Владимире при Андрее Боголюбском."],
+["Даты","1165 год","Строительство церкви Покрова на Нерли."],
+["Даты","1176–1212 гг.","Княжение Всеволода Большое Гнездо во Владимире."],
+["Личности","Какие племена, по летописи, призвали Рюрика?","Словене, кривичи, чудь и весь."],
+["Личности","Чем известна княгиня Ольга?","Отомстила древлянам за мужа, провела реформу «уроков» и «погостов», первой из Рюриковичей приняла христианство."],
+["Личности","Чем известен Святослав Игоревич?","Князь-воин: разгромил Хазарский каганат, воевал на Балканах с Византией, погиб от печенегов."],
+["Личности","Чем знаменито правление Ярослава Мудрого?","«Русская Правда», строительство Софийского собора, династические браки, расцвет Киева, разгром печенегов."],
+["Личности","О чём «Поучение» Владимира Мономаха?","Наставление детям: жить по совести, беречь единство Руси, не нарушать клятву, быть справедливым."],
+["Личности","Что такое Киево-Печерский монастырь?","Монастырь XI в. (Антоний и Феодосий), центр книжности и летописания, где жил Нестор."],
+["Личности","Что такое десятина?","Десятая часть доходов князя, отдаваемая церкви. Установлена при Владимире."],
+["Личности","Кто такие бояре?","Верхушка дружины, крупные землевладельцы и советники князя."],
+["Личности","Что такое удел?","Земля, выделенная члену княжеского рода во владение. Отсюда название «удельный период»."],
+["Раздробленность","Кто такой посадник?","Глава управления в Новгороде, избирался на вече."],
+["Раздробленность","Кто такой тысяцкий?","В Новгороде возглавлял городское ополчение и ведал торговым судом."],
+["Раздробленность","На чём держалось богатство Новгорода?","На торговле (меха, воск) и ремёслах, на власти боярской верхушки."],
+["Раздробленность","Какие города были главными во Владимиро-Суздальской земле?","Владимир, Суздаль, Ростов. Позднее поднялись Москва и другие."],
+["Раздробленность","Какие города были центрами Галицко-Волынского княжества?","Галич, Владимир-Волынский и Холм, основанный Даниилом Галицким."]
+];
+var ALL=D.map(function(d,k){var s=/^\d/.test(d[1]);return {k:k,c:d[0],q:s?d[2]:d[1],a:s?d[1]:d[2],d:s}});
+function ld(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
+function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+var sel="Все",deck=[],i=0,flipped=false,known=ld("ege_known",{}),mode="cards",score=0,picked=null;
+var pr=ld("ege_prefs",{});if(["Все","Даты","Личности","Раздробленность"].indexOf(pr.sel)>-1)sel=pr.sel;if(pr.mode==="test")mode="test";
+var cats=["Все","Даты","Личности","Раздробленность"];
+var chips=document.getElementById("chips"),stage=document.getElementById("stage");
+cats.forEach(function(c){var b=document.createElement("button");b.className="chip";b.textContent=c;b.onclick=function(){sel=c;build()};chips.appendChild(b)});
+var modes=document.getElementById("modes");
+["Карточки","Тест"].forEach(function(t){var b=document.createElement("button");b.className="chip";b.textContent=t;b.onclick=function(){mode=t==="Тест"?"test":"cards";build(true)};modes.appendChild(b)});
+function shuffle(a){for(var k=a.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1));var t=a[k];a[k]=a[j];a[j]=t}return a}
+function build(shuf,all){
+ deck=ALL.map(function(x){return Object.assign({},x)}).filter(function(x){return sel==="Все"||x.c===sel});
+ if(mode==="cards"&&!all)deck=deck.filter(function(x){return !known[x.k]});
+ if(shuf)shuffle(deck);
+ i=0;flipped=false;score=0;picked=null;
+ sv("ege_prefs",{sel:sel,mode:mode});
+ Array.prototype.forEach.call(chips.children,function(b){b.classList.toggle("on",b.textContent===sel)});
+ Array.prototype.forEach.call(document.getElementById("modes").children,function(b){b.classList.toggle("on",(b.textContent==="Тест")===(mode==="test"))});
+ render();
+}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function render(){
+ if(mode==="test"){renderTest();return}
+ var pool=ALL.filter(function(x){return sel==="Все"||x.c===sel}),n=pool.filter(function(x){return known[x.k]}).length,left=pool.length-n;
+ document.getElementById("bar").style.width=(pool.length?n/pool.length*100:0)+"%";
+ document.getElementById("score").textContent="Знаю: "+n+" из "+pool.length;
+ if(i>=deck.length){
+  document.getElementById("pos").textContent="";
+  stage.innerHTML=left>0?'<div class="done"><h2>Круг пройден</h2><p>Выучено: '+n+' из '+pool.length+'. Осталось: '+left+'</p><div class="ctl"><button class="know" onclick="build(true)">Ещё круг</button></div></div>':'<div class="done"><h2>Всё выучено 🎉</h2><p>Вы отметили все карточки раздела: '+n+' из '+pool.length+'</p><div class="ctl"><button class="know" onclick="build(true,true)">Повторить все</button></div></div>';
+  return;
+ }
+ var c=deck[i];
+ document.getElementById("pos").textContent="Карточка "+(i+1)+" / "+deck.length;
+ stage.innerHTML='<div class="scene" onclick="flip()"><div class="card'+(flipped?" flip":"")+'" id="card"><div class="face front"><div class="tag">'+c.c+'</div>'+esc(c.q)+'<div class="hint">нажмите, чтобы увидеть ответ</div></div><div class="face backf"><div class="tag">'+(c.d?"Дата":"Ответ")+'</div><div class="'+(c.d?"big":"")+'">'+esc(c.a)+'</div></div></div></div>'+
+ '<div class="ctl"><button class="again" onclick="mark(false)">Повторить</button><button class="know" onclick="mark(true)">Знаю</button></div>'+
+ '<div class="tools"><button onclick="go(-1)">← Назад</button><button onclick="build(true)">Перемешать</button><button onclick="go(1)">Вперёд →</button></div>';
+}
+function makeOpts(c){
+ var seen={};seen[c.a]=1;
+ var dt=function(x){return !x.d?"n":/–/.test(x.a)?"r":/^\d{1,2} [^\d]/.test(x.a)?"f":"y"};
+ var pool=shuffle(ALL.filter(function(x){return x.d===c.d&&dt(x)===dt(c)}).map(function(x){return x.a})),o=[];
+ for(var k=0;k<pool.length&&o.length<3;k++){if(!seen[pool[k]]){seen[pool[k]]=1;o.push(pool[k])}}
+ o.push(c.a);shuffle(o);c.ci=o.indexOf(c.a);return o;
+}
+function renderTest(){
+ var tot=deck.length;
+ document.getElementById("bar").style.width=(tot?i/tot*100:0)+"%";
+ document.getElementById("score").textContent="Верно: "+score;
+ if(i>=tot){
+  document.getElementById("pos").textContent="";
+  var pc=tot?Math.round(score/tot*100):0,bk="ege_best_"+sel,bs=ld(bk,0);if(pc>bs){sv(bk,pc);bs=pc}
+  stage.innerHTML='<div class="done"><h2>Тест завершён</h2><p>Правильных ответов: '+score+' из '+tot+' ('+pc+'%)</p><p>Лучший результат: '+bs+'%</p><div class="ctl"><button class="know" onclick="build(true)">Пройти заново</button></div></div>';
+  return;
+ }
+ var c=deck[i];if(!c.o)c.o=makeOpts(c);
+ document.getElementById("pos").textContent="Вопрос "+(i+1)+" / "+tot;
+ var h='<div class="qbox"><div class="tag">'+c.c+'</div>'+(c.d?"Когда это произошло? ":"")+esc(c.q)+'</div><div class="opts">';
+ c.o.forEach(function(t,k){var cl="opt";if(picked!==null){if(k===c.ci)cl+=" good";else if(k===picked)cl+=" bad"}h+='<button class="'+cl+'"'+(picked!==null?" disabled":"")+' onclick="pick('+k+')">'+esc(t)+'</button>'});
+ h+='</div>';
+ if(picked!==null)h+='<div class="ctl"><button class="know" onclick="nextQ()">'+(i+1>=tot?"Результат":"Дальше")+'</button></div>';
+ stage.innerHTML=h;
+}
+function pick(k){if(picked!==null)return;picked=k;if(deck[i].o[k]===deck[i].a)score++;renderTest()}
+function nextQ(){i++;picked=null;renderTest()}
+var rt=0;
+function resetAll(){var b=document.getElementById("reset");if(!rt){rt=setTimeout(function(){rt=0;b.textContent="Сбросить прогресс"},3000);b.textContent="Нажмите ещё раз, чтобы стереть";return}clearTimeout(rt);rt=0;b.textContent="Сбросить прогресс";known={};sv("ege_known",{});try{Object.keys(localStorage).forEach(function(k){if(k.indexOf("ege_best_")===0)localStorage.removeItem(k)})}catch(e){}build(true)}
+var tx=0,ty=0;
+stage.addEventListener("touchstart",function(e){var t=e.touches[0];tx=t.clientX;ty=t.clientY},{passive:true});
+stage.addEventListener("touchend",function(e){if(mode!=="cards"||!e.target.closest||!e.target.closest(".scene"))return;var t=e.changedTouches[0],dx=t.clientX-tx,dy=t.clientY-ty;if(Math.abs(dx)>80&&Math.abs(dy)<60)mark(dx>0)},{passive:true});
+function flip(){flipped=!flipped;document.getElementById("card").classList.toggle("flip",flipped)}
+function animIn(){var s=document.querySelector(".scene");if(s&&s.animate)s.animate([{opacity:0,transform:"translateX(200px) rotate(6deg)"},{opacity:1,transform:"none"}],{duration:700,easing:"cubic-bezier(.3,.1,.2,1)"})}
+function go(d){i=Math.max(0,Math.min(deck.length,i+d));flipped=false;render();animIn()}
+function mark(ok){if(ok)known[deck[i].k]=1;else delete known[deck[i].k];sv("ege_known",known);go(1)}
+(function(){
+var fx=document.getElementById("fx"),logo='<svg viewBox="0 0 100 100" width="100%" height="100%"><g transform="rotate(15 50 50)"><path fill="#e2231a" fill-rule="evenodd" d="M10 10H90V90H10Z M38 38V62H62V38Z"/></g></svg>';
+var N=window.innerWidth<600?10:22;for(var n=0;n<N;n++){
+ var e=document.createElement("div"),isH=n%3!==0,sz=isH?20+Math.random()*34:40+Math.random()*34;
+ e.className="fl"+(isH?" h":"");
+ if(isH){e.textContent="♥";e.style.fontSize=sz+"px"}else{e.innerHTML=logo;e.style.width=e.style.height=sz+"px"}
+ e.style.animationDuration=(16+Math.random()*18)+"s";
+ e.style.animationDelay="-"+(Math.random()*30)+"s";
+ fx.appendChild(e);
+}
+var W=function(){return window.innerWidth},H=function(){return window.innerHeight};
+var P=[].map.call(fx.children,function(e){var s=e.offsetWidth||40,sp=.5+Math.random()*1.1,a=Math.random()*6.283;return {e:e,s:s,x:Math.random()*Math.max(1,W()-s),y:Math.random()*Math.max(1,H()-s),vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,r:Math.random()*360,vr:(Math.random()-.5)*1.6}});
+function put(p){p.e.style.transform="translate("+p.x+"px,"+p.y+"px) rotate("+p.r+"deg)"}
+function tick(){
+ P.forEach(function(p){
+  p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;
+  var mx=Math.max(0,W()-p.s),my=Math.max(0,H()-p.s);
+  if(p.x<0||p.x>mx){p.vx*=-1;p.x=Math.max(0,Math.min(mx,p.x))}
+  if(p.y<0||p.y>my){p.vy*=-1;p.y=Math.max(0,Math.min(my,p.y))}
+  put(p);
+ });
+ requestAnimationFrame(tick);
+}
+if(window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches){P.forEach(put)}else{tick()}
+})();
+build(true);
+</script>
+</body>
+</html>
